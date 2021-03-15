@@ -1,28 +1,35 @@
 #include<iostream>
+#include<vector>
 #include<string>
 using namespace std;
 int main()
 {
-    int c=0;
-    string str,one,zero;
-    cin>>str;
-    for(int i=0;i<str.size();i++)
+    vector<string> v;
+    int n,e=1,dif=0;
+    string str,d;
+    cin>>n;
+    for(int i=0;i<n;i++)
     {
-        if(str[i]==str[i+1])//1111111
+        cin>>str;
+        v.push_back(str);
+    }
+
+    for(int i=1;i<n;i++)
+    {
+        if(v[0]==v[i])
         {
-            c++;
-            if(c>=6)
-                break;
+            e++;
         }
         else
-            c=0;
+        {
+            dif++;
+            d=v[i];
+        }
     }
-            if(c>=6)
-                {
-                    cout<<"YES"<<endl;
-                }
-                else
-                    cout<<"NO"<<endl;
-
-         return 0;
+    if(e>dif)
+    {
+        cout<<v[0]<<endl;
+    }
+    else
+        cout<<d<<endl;
 }
