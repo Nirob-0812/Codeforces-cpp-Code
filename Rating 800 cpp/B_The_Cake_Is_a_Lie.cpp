@@ -18,13 +18,16 @@ typedef set<char>::iterator scit;
 
 Nirob
 {
-    while(1)
+    testcase
     {
-        string str;
-        getline(cin,str);
-        if(str=="Is it rated?")
+        ll n,m,k,mn,s;
+        cin>>n>>m>>k;
+        mn=min(n,m);
+        s=(mn-1)+(max(n,m)-1)*mn;
+        if(s==k)
+        cout<<"YES"<<endl;
+        else
         cout<<"NO"<<endl;
-        else break;
     }
 
 
